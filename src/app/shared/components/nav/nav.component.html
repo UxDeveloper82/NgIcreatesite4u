@@ -55,7 +55,7 @@
         </ng-template>
         <li  *ngIf="auth.user$ | async as user; else anonymousUser" class="nav-item dropdown" dropdown>
           <a class="nav-link dropdown-toggle" dropdownToggle>
-            Welcome {{user.displayName}}
+            Welcome {{user.email}}
           </a>
           <div class="dropdown-menu mt-3" *dropdownMenu>
             <a class="dropdown-item" routerLink="/message-page">Messages</a>

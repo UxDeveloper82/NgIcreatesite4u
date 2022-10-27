@@ -19,7 +19,7 @@ header {
   height: 100%;
   background-color: #000;
   min-height: auto;
-  //background: url(../images/bg/icreatesite4u-bg.jpg)no-repeat;
+  background: url(/assets/images/bg/icreatesite4u-bg.jpg)no-repeat;
   background-position: center;
   background-size: cover;
   -webkit-background-size: cover;
@@ -131,7 +131,7 @@ Our-Services-area
 ------------------*/
 #detail-area {
   margin: auto 0;
-  //background: url(../images/bg/page-bg.jpg)no-repeat;
+  background: url(/assets/bg/page-bg.jpg)no-repeat;
   background-size: cover;
   padding: 20px;
 }
@@ -469,7 +469,7 @@ Contact-Us
 .hours {
   text-align:center;
   padding:100px 0;
-//background:url('../images/bg/abousUs-bg.jpg');
+background:url('/assets/bg/abousUs-bg.jpg');
 background-repeat: no-repeat;
 background-size: cover;
 background-position: center;
