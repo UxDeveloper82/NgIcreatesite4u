@@ -11,6 +11,7 @@ import { VideosComponent } from './components/videos/videos.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FormsModule } from '@angular/forms';
+import { AboutComponent } from './components/about/about.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     NavComponent,
     VideosComponent,
     ProjectsComponent,
-    ContactComponent
+    ContactComponent,
+    AboutComponent
   ],
   imports: [
     CommonModule,

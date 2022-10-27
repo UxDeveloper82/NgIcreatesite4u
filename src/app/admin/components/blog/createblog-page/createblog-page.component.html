@@ -1,5 +1,7 @@
 <div class="container-fluid">
+  <div class="d-flex" id="wrapper">
   <app-sidebar-page></app-sidebar-page>
+  <div class="col-md-10">
   <form
     [formGroup]="newPostForm"
     (ngSubmit)="addNewPost(newPostForm.value)"
@@ -52,4 +54,6 @@
       <input class="btn btn-primary btn-group-lg" type="submit" value="save" />
     </div>
   </form>
+  </div>
+  </div>
 </div>
