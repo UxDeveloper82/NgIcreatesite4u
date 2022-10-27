@@ -1,0 +1,69 @@
+<section class="page-hero">
+  <div class="section-center">
+    <h3 class="page-hero-title">Home / My-Videos</h3>
+  </div>
+</section>
+<div class="container">
+  <div class="row pt-5 mb-5">
+    <div
+      class="col-lg-4 mr-auto px-3 py-3 semiBG d-flex d-flex justify-content-between flex-column mb-lg-0 mb-5"
+    >
+      <h2 class="text-black-50">About</h2>
+      <section>
+        <p class="bodyFont text-black-50">
+          My Coding Channel is all about making the best with the best tools and
+          sharing my videos with the world.
+        </p>
+        <p class="bodyFont text-black-50">
+          Watch my videos by clicking the link below, or click on one of my most
+          popular playlists.
+        </p>
+      </section>
+      <div class="text-md-right headingFont">
+        <a
+          href="https://www.youtube.com/channel/UCymPTmdV5goU-IBMCAPaErQ"
+          class="btn hero-btn"
+          >Join The channel &#8594;</a
+        >
+      </div>
+    </div>
+    <div class="col-lg-7 px-3 py-3 semiBG">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe
+          width="100%"
+          src="https://www.youtube.com/embed/HpYGcE8jMQc"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+  <!--end .row-->
+</div>
+
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let video of videos" class="col-md-6 col-lg-4">
+        <div class="card border-0 shadow vh-50 mx-30 mb-4">
+          <a
+            href="https://www.youtube.com/watch?v={{ video.id.videoId }}"
+            class="card-img-top"
+            target="_blank"
+          >
+            <img
+              [src]="video.snippet.thumbnails.medium.url"
+              class="card-img-top"
+              alt="{{ video.snippet.title }}"
+          /></a>
+          <div class="card-body text-center">
+            <h4 class="card-title mb-0">
+              {{ video.snippet.title.slice(0, 20) }} ...
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
