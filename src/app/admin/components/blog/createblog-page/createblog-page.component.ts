@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
 import { Ipost } from 'src/app/_models/Ipost';
 import { PostService } from 'src/app/_services/post.service';
 
@@ -9,7 +11,9 @@ import { PostService } from 'src/app/_services/post.service';
   styleUrls: ['./createblog-page.component.scss']
 })
 export class CreateblogPageComponent implements OnInit {
-  private image: any;
+  private postsCollection: AngularFirestoreCollection<Ipost>
+  private filePath: any;
+  private downloadURL: Observable<string>;
 
   constructor(private postService: PostService) { }
 
@@ -23,9 +27,9 @@ export class CreateblogPageComponent implements OnInit {
   }
   addNewPost(data: Ipost) {
     console.log('New post', data);
-    this.postService.preAddAndUpdatePost(data, this.image);
+    this.postService.preAddAndUpdatePost(data, this.filePath);
   }
   handleImage(event: any): void {
-    this.image = event.target.files[0];
+    this.filePath = event.target.files[0];
   }
 }
