@@ -6,13 +6,17 @@ import { SidebarPageComponent } from './components/sidebar-page/sidebar-page.com
 import { MessagePageComponent } from './components/message-page/message-page.component';
 import { CreateblogPageComponent } from './components/blog/createblog-page/createblog-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BloglistPageComponent } from './components/blog/bloglist-page/bloglist-page.component';
+import { EditblogPageComponent } from './components/blog/editblog-page/editblog-page.component';
 
 
 @NgModule({
   declarations: [
     SidebarPageComponent,
     MessagePageComponent,
-    CreateblogPageComponent
+    CreateblogPageComponent,
+    BloglistPageComponent,
+    EditblogPageComponent
   ],
   imports: [
     CommonModule,

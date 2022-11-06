@@ -33,7 +33,7 @@
         <li class="nav-item">
           <a
             class="nav-link"
-            routerLink="/blog"
+            routerLink="/blog-list"
             >My-Blog</a
           >
         </li>
@@ -59,16 +59,13 @@
           </a>
           <div class="dropdown-menu mt-3" *dropdownMenu>
             <a class="dropdown-item" routerLink="/message-page">Messages</a>
-            <a class="dropdown-item" routerLink="/createblog-page">Create Blog</a>
+            <a class="dropdown-item" routerLink="/bloglist">blog list</a>
             <a class="dropdown-item" routerLink="/admin/orders"
               >Manage Orders</a
             >
             <a class="dropdown-item" routerLink="/admin/products"
               >Manage Products</a
             >
-            <a class="dropdown-item" routerLink="/new-post"
-            >Create Post</a
-          >
             <a class="dropdown-item" (click)="logout()">Log Out</a>
           </div>
         </li>

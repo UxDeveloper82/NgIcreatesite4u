@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BloglistPageComponent } from './admin/components/blog/bloglist-page/bloglist-page.component';
 import { CreateblogPageComponent } from './admin/components/blog/createblog-page/createblog-page.component';
 import { BlogDetailComponent } from './blog/blog-detail/blog-detail.component';
 import { BlogListComponent } from './blog/blog-list/blog-list.component';
@@ -30,10 +31,13 @@ const routes: Routes = [
     path: 'createblog-page', component: CreateblogPageComponent,
     canActivate: [AuthGuard],
   },
+  { path: 'bloglist', component: BloglistPageComponent,
+    canActivate: [AuthGuard],
+  },
   { path: 'videos', component: VideosComponent },
   { path: 'verify-email', component: VerifyEmailComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
-  { path: 'blog', component: BlogListComponent },
+  { path: 'blog-list', component: BlogListComponent},
   { path: 'blog/:id', component: BlogDetailComponent},
   { path: 'new-post', component: BlogNewComponent},
   { path: 'projects', component: ProjectsComponent },
