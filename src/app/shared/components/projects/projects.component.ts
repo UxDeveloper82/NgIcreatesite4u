@@ -8,10 +8,11 @@ import { ProjectsService } from 'src/app/_services/projects.service';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
+  showImage: boolean;
   projects: Project[] = [];
   public filterCategory: any;
 
-  constructor(private projectsService: ProjectsService) { }
+  constructor(private projectsService: ProjectsService) {}
 
   ngOnInit(): void {
      this.projectsService.getProjects().subscribe((res) => {
@@ -29,4 +30,7 @@ export class ProjectsComponent implements OnInit {
      })
   }
 
+  toggleImage(): void {
+    this.showImage = !this.showImage;
+  }
 }
