@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Project } from 'src/app/_models/project';
+import { Iproject } from 'src/app/_models/Iproject';
 import { ProjectsService } from 'src/app/_services/projects.service';
 
 @Component({
@@ -9,16 +9,23 @@ import { ProjectsService } from 'src/app/_services/projects.service';
 })
 export class ProjectsComponent implements OnInit {
   showImage: boolean;
-  projects: Project[] = [];
+  projects: Iproject[] = [];
   public filterCategory: any;
+  public searchTerm !:string;
+  searchKey: string = "";
 
   constructor(private projectsService: ProjectsService) {}
 
   ngOnInit(): void {
-     this.projectsService.getProjects().subscribe((res) => {
+     this.projectsService.getProjects()
+      .subscribe( res=> {
       this.projects = res;
       this.filterCategory = res;
+      console.log(this.projects);
      });
+     this.projectsService.search.subscribe((val:any) => {
+      this.searchKey = val;
+    })
   }
 
   filter(category: string) {
@@ -33,4 +40,11 @@ export class ProjectsComponent implements OnInit {
   toggleImage(): void {
     this.showImage = !this.showImage;
   }
+
+  search(event: any) {
+    this.searchTerm = (event.target as HTMLInputElement).value;
+    console.log(this.searchTerm);
+    this.projectsService.search.next(this.searchTerm);
+  }
+
 }

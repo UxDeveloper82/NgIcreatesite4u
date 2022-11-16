@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BloglistPageComponent } from './admin/components/blog/bloglist-page/bloglist-page.component';
 import { CreateblogPageComponent } from './admin/components/blog/createblog-page/createblog-page.component';
+import { CreateprojectPageComponent } from './admin/components/project/createproject-page/createproject-page.component';
+import { ProjectlistPageComponent } from './admin/components/project/projectlist-page/projectlist-page.component';
 import { BlogDetailComponent } from './blog/blog-detail/blog-detail.component';
 import { BlogListComponent } from './blog/blog-list/blog-list.component';
 import { BlogNewComponent } from './blog/blog-new/blog-new.component';
@@ -34,6 +36,12 @@ const routes: Routes = [
   { path: 'bloglist', component: BloglistPageComponent,
     canActivate: [AuthGuard],
   },
+  { path: 'createproject-page', component: CreateprojectPageComponent,
+  canActivate: [AuthGuard],
+},
+{ path: 'projectlist', component: ProjectlistPageComponent,
+canActivate: [AuthGuard],
+},
   { path: 'videos', component: VideosComponent },
   { path: 'verify-email', component: VerifyEmailComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },

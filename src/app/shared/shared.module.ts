@@ -12,6 +12,8 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FormsModule } from '@angular/forms';
 import { AboutComponent } from './components/about/about.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FilterPipe } from './filter.pipe';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { AboutComponent } from './components/about/about.component';
     VideosComponent,
     ProjectsComponent,
     ContactComponent,
-    AboutComponent
+    AboutComponent,
+    HeaderComponent,
+    FilterPipe
   ],
   imports: [
     CommonModule,
@@ -40,7 +44,8 @@ import { AboutComponent } from './components/about/about.component';
     HomePageComponent,
     NavComponent,
     VideosComponent,
-    ContactComponent
+    ContactComponent,
+    FilterPipe
   ]
 })
 export class SharedModule { }

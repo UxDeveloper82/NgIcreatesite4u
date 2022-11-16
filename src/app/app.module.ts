@@ -20,7 +20,6 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { SearchListComponent } from './search-list/search-list.component';
-import { FilterPipe } from './_shared/filter.pipe';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { BlogListComponent } from './blog/blog-list/blog-list.component';
@@ -37,7 +36,6 @@ import { SharedModule } from './shared/shared.module';
     VerifyEmailComponent,
     ForgotPasswordComponent,
     SearchListComponent,
-    FilterPipe,
     NotFoundComponent,
     BlogListComponent,
     BlogDetailComponent,

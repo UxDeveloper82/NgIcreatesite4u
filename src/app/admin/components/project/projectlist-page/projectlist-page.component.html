@@ -1,0 +1,29 @@
+<div class="d-flex" id="wrapper">
+  <app-sidebar-page></app-sidebar-page>
+  <div class="container-fluid">
+    <div class="text-center mt-3">
+        <h2>Blog-list</h2>
+        <hr />
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+      <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+      <a class="btn btn-warning float-right" [routerLink]="['/createproject-page']"><i class="fas fa-plus"></i> &nbsp; Create New Project</a>
+  </nav>
+    <div class="table-responsive p-2">
+        <table id="mypost" class="table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Content</th>
+                    <th>Image</th>
+                    <th>Tags</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+
+        </table>
+    </div>
+  </div>
+</div>
+

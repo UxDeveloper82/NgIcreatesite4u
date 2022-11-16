@@ -8,6 +8,8 @@ import { CreateblogPageComponent } from './components/blog/createblog-page/creat
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BloglistPageComponent } from './components/blog/bloglist-page/bloglist-page.component';
 import { EditblogPageComponent } from './components/blog/editblog-page/editblog-page.component';
+import { CreateprojectPageComponent } from './components/project/createproject-page/createproject-page.component';
+import { ProjectlistPageComponent } from './components/project/projectlist-page/projectlist-page.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { EditblogPageComponent } from './components/blog/editblog-page/editblog-
     MessagePageComponent,
     CreateblogPageComponent,
     BloglistPageComponent,
-    EditblogPageComponent
+    EditblogPageComponent,
+    CreateprojectPageComponent,
+    ProjectlistPageComponent
   ],
   imports: [
     CommonModule,

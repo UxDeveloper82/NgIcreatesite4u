@@ -1,0 +1,11 @@
+<div id="searchWrapper" class="form-group">
+  <input
+    type="text"
+    class="form-control"
+    [(ngModel)]="searchTerm"
+    (keyup)="search($event)"
+    name="searchBar"
+    id="searchBar"
+    placeholder="search for a Project"
+  />
+</div>

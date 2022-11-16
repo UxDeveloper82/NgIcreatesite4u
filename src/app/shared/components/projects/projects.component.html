@@ -21,6 +21,8 @@
               <input
                 type="text"
                 class="form-control"
+                [(ngModel)]="searchTerm"
+                (keyup)="search($event)"
                 name="searchBar"
                 id="searchBar"
                 placeholder="search for a Project"
@@ -81,7 +83,7 @@
         <div class="col-lg-12">
           <div class="projects">
             <div id="card" class="row grid justify-content-center">
-              <div class="col-lg-4" *ngFor="let project of filterCategory" (click)="toggleImage()">
+              <div class="col-lg-4" *ngFor="let project of filterCategory | filter: searchKey:'title'">
                 <div class="card">
                   <div class="card-head">
                     <img
