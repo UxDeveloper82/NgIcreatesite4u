@@ -19,7 +19,6 @@ export class CreateprojectPageComponent implements OnInit {
 
   public newProjectForm = new FormGroup({
       titleProject: new FormControl('', Validators.required),
-      name: new FormControl('', Validators.required),
       imageProject: new FormControl('', Validators.required),
       contentProject: new FormControl('', Validators.required),
       tagsProject: new FormControl('', Validators.required)
@@ -36,5 +35,4 @@ export class CreateprojectPageComponent implements OnInit {
   handleImage(event: any) {
     this.filePath = event.target.files[0];
   }
-
 }

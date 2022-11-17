@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BloglistPageComponent } from './admin/components/blog/bloglist-page/bloglist-page.component';
 import { CreateblogPageComponent } from './admin/components/blog/createblog-page/createblog-page.component';
 import { CreateprojectPageComponent } from './admin/components/project/createproject-page/createproject-page.component';
+import { EditprojectPageComponent } from './admin/components/project/editproject-page/editproject-page.component';
 import { ProjectlistPageComponent } from './admin/components/project/projectlist-page/projectlist-page.component';
 import { BlogDetailComponent } from './blog/blog-detail/blog-detail.component';
 import { BlogListComponent } from './blog/blog-list/blog-list.component';
@@ -40,6 +41,9 @@ const routes: Routes = [
   canActivate: [AuthGuard],
 },
 { path: 'projectlist', component: ProjectlistPageComponent,
+canActivate: [AuthGuard],
+},
+{ path: 'editproject', component: EditprojectPageComponent,
 canActivate: [AuthGuard],
 },
   { path: 'videos', component: VideosComponent },

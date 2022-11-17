@@ -13,15 +13,26 @@
         <table id="mypost" class="table table-striped table-bordered" style="width:100%">
             <thead>
                 <tr>
-                    <th>Title</th>
-                    <th>Content</th>
-                    <th>Image</th>
-                    <th>Tags</th>
+                    <th>Project Title</th>
+                    <th>Project Content</th>
+                    <th>Project Image</th>
+                    <th>Project Tags</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
             </thead>
-
+            <tbody *ngFor="let project of projects$ | async">
+                 <tr>
+                     <td>{{project.titleProject}}</td>
+                     <td>{{project.contentProject}}</td>
+                     <td [width]="200" [height]="50">
+                         <img src="{{project.imageProject}}" alt="{{project.titleProject}}" style="width:50%">
+                     </td>
+                     <td>{{project.tagsProject}}</td>
+                     <td><a routerLink="/editproject"><i class="fas fa-edit"></i></a></td>
+                     <td><i class="fas fa-trash-alt"></i></td>
+                 </tr>
+            </tbody>
         </table>
     </div>
   </div>

@@ -10,6 +10,7 @@ import { BloglistPageComponent } from './components/blog/bloglist-page/bloglist-
 import { EditblogPageComponent } from './components/blog/editblog-page/editblog-page.component';
 import { CreateprojectPageComponent } from './components/project/createproject-page/createproject-page.component';
 import { ProjectlistPageComponent } from './components/project/projectlist-page/projectlist-page.component';
+import { EditprojectPageComponent } from './components/project/editproject-page/editproject-page.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ProjectlistPageComponent } from './components/project/projectlist-page/
     BloglistPageComponent,
     EditblogPageComponent,
     CreateprojectPageComponent,
-    ProjectlistPageComponent
+    ProjectlistPageComponent,
+    EditprojectPageComponent
   ],
   imports: [
     CommonModule,

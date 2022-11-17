@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar-page.component.scss']
 })
 export class SidebarPageComponent implements OnInit {
-
+  hideSideNav: boolean = false;
+  
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggleSideNav() : void {
+    this.hideSideNav = !this.hideSideNav;
   }
 
 }

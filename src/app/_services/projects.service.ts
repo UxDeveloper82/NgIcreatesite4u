@@ -20,7 +20,7 @@ export class ProjectsService {
   constructor(private http: HttpClient,
             private afs: AngularFirestore,
             private storage: AngularFireStorage) {
-    this.projectsCollection = afs.collection<any>('projects', (ref) =>
+    this.projectsCollection = afs.collection<any>('Projects', (ref) =>
       ref.orderBy('id','asc')
     );
   }
@@ -37,7 +37,7 @@ export class ProjectsService {
 
   public getAllProjectList(): Observable<Iproject[]>{
     return this.afs
-        .collection('projects')
+        .collection('Projects')
         .snapshotChanges()
         .pipe(
           map((action) =>
@@ -50,7 +50,7 @@ export class ProjectsService {
   }
 
   public getOneProject(id: Iproject): Observable<Iproject> {
-    return this.afs.doc<Iproject>(`project/${id}`).valueChanges();
+    return this.afs.doc<Iproject>(`Project/${id}`).valueChanges();
   }
 
   public onEditProject(project: Iproject) {
@@ -68,7 +68,6 @@ export class ProjectsService {
   private saveProject(project: Iproject) {
      const projectObj = {
          titleProject: project.titleProject,
-         name: project.name,
          contentProject: project.contentProject,
          imageProject: this.downloadUrl,
          fileRef: this.filePath,
