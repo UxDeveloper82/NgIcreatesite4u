@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar-page',
@@ -6,15 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar-page.component.scss']
 })
 export class SidebarPageComponent implements OnInit {
-  hideSideNav: boolean = false;
-  
+
+  @Output() showToggle = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  toggleSideNav() : void {
-    this.hideSideNav = !this.hideSideNav;
+
+  onShowNavbar() {
+    this.showToggle.emit(false);
   }
 
 }

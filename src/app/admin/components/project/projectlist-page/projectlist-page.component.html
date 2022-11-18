@@ -1,12 +1,35 @@
 <div class="d-flex" id="wrapper">
-  <app-sidebar-page></app-sidebar-page>
+  <!-- Sidebar -->
+<div class="bg-light border-right" id="sidebar-wrapper"
+[ngClass]="toggleNav ? 'hide' : 'show'">
+  <div class="sidebar-heading">
+    <a class="list-group-item-action" routerLink="/dashboard"
+      ><i class="fa fa-pie-chart fa-2x"></i>Admin Dashboard</a
+    >
+  </div>
+  <div class="clearfix"></div>
+  <div class="list-group list-group-flush">
+    <a class="list-group-item list-group-item-action bg-light"
+      ><i class="fa fa-plus-circle fa-2x"></i>Pages</a
+    >
+    <div class="clearfix"></div>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a
+          class="list-group-item list-group-item-action bg-light link-collapse">
+          <i class="fa fa-home fa-2x"></i>Home-Page
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
   <div class="container-fluid">
     <div class="text-center mt-3">
-        <h2>Blog-list</h2>
+        <h2>Project-list</h2>
         <hr />
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-      <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+      <button class="btn btn-primary" id="menu-toggle" (click)="toggleNavbar()">Toggle Menu</button>
       <a class="btn btn-warning float-right" [routerLink]="['/createproject-page']"><i class="fas fa-plus"></i> &nbsp; Create New Project</a>
   </nav>
     <div class="table-responsive p-2">
