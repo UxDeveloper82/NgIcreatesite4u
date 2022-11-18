@@ -10,6 +10,7 @@ import { EventEmitter } from 'stream';
   styleUrls: ['./projectlist-page.component.scss']
 })
 export class ProjectlistPageComponent implements OnInit {
+
   toggleNav = false;
 
   public projects$: Observable<Iproject[]>;
@@ -21,11 +22,11 @@ export class ProjectlistPageComponent implements OnInit {
   }
 
   toggleNavbar() {
-     console.log("You click");
      this.toggleNav= !this.toggleNav
   }
 
-  onShowNavbar() {
+  onShowNavbar(event: boolean) {
+    console.log("Parent You click");
     this.toggleNav= !this.toggleNav
   }
 

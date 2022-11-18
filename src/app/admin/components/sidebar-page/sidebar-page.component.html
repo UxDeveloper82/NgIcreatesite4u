@@ -1,5 +1,7 @@
-<!-- Sidebar -->
-<div class="bg-light border-right" id="sidebar-wrapper">
+<div class="d-flex" id="wrapper">
+ <!-- Sidebar -->
+  <div class="bg-light border-right" id="sidebar-wrapper"
+  [ngClass]="onShowNavbar? 'hide' : 'show'">
   <div class="sidebar-heading">
     <a class="list-group-item-action" routerLink="/dashboard"
       ><i class="fa fa-pie-chart fa-2x"></i>Admin Dashboard</a
@@ -21,3 +23,6 @@
     </ul>
   </div>
 </div>
+<app-projectlist-page></app-projectlist-page>
+</div>
+

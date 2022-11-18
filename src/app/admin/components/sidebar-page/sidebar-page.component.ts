@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class SidebarPageComponent implements OnInit {
 
   @Output() showToggle = new EventEmitter();
+  pages: string[] | undefined;
 
   constructor() { }
 
@@ -16,6 +17,7 @@ export class SidebarPageComponent implements OnInit {
 
 
   onShowNavbar() {
+    console.log('click');
     this.showToggle.emit(false);
   }
 
