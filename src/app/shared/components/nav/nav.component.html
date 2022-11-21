@@ -31,11 +31,7 @@
           <a class="nav-link" routerLink="/videos">YouTube</a>
         </li>
         <li class="nav-item">
-          <a
-            class="nav-link"
-            routerLink="/blog-list"
-            >My-Blog</a
-          >
+          <a class="nav-link" routerLink="/blog-list">My-Blog</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/projects">Projects</a>
@@ -53,26 +49,16 @@
             <a class="nav-link" routerLink="/register">Register</a>
           </li>
         </ng-template>
-        <li  *ngIf="auth.user$ | async as user; else anonymousUser" class="nav-item dropdown" dropdown>
+        <li
+          *ngIf="auth.user$ | async as user; else anonymousUser"
+          class="nav-item dropdown"
+          dropdown
+        >
           <a class="nav-link dropdown-toggle" dropdownToggle>
-            Welcome {{user.email}}
+            Welcome {{ user.email }}
           </a>
           <div class="dropdown-menu mt-3" *dropdownMenu>
-            <a class="dropdown-item" routerLink="/message-page">Messages</a>
-            <a class="dropdown-item" routerLink="/bloglist">blog list</a>
-
-              <a
-                class="dropdown-item"
-                routerLink="/projectlist"
-                >My-Projects</a
-              >
-
-            <a class="dropdown-item" routerLink="/admin/orders"
-              >Manage Orders</a
-            >
-            <a class="dropdown-item" routerLink="/admin/products"
-              >Manage Products</a
-            >
+            <a class="dropdown-item" routerLink="/admin-panel">Admin-Panel</a>
             <a class="dropdown-item" (click)="logout()">Log Out</a>
           </div>
         </li>

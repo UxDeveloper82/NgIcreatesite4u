@@ -28,7 +28,7 @@
                 </td>
                 <td>{{post.tagsPost}}</td>
                 <td><i class="fas fa-edit"></i></td>
-                <td><i class="fas fa-trash-alt"></i></td>
+                <td (click)="deletePost(post)"><i class="fas fa-trash-alt"></i></td>
               </tr>
             </tbody>
         </table>

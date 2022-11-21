@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Message } from '../_models/message';
+import { Observable } from 'rxjs';
+import { finalize, map } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +19,18 @@ export class MessageService {
   }
 
   // get all messages
-  getAllMessages() {
-    return this.afs.collection('/Messages').snapshotChanges();
+  getAllMessages(): Observable<Message[]> {
+    return this.afs
+        .collection('/Messages')
+        .snapshotChanges()
+        .pipe(
+          map(actions =>
+            actions.map(a => {
+              const data = a.payload.doc.data() as Message;
+              const id = a.payload.doc.id;
+              return { id, ...data};
+            }))
+        )
   }
 
   deleteMessage(message: Message) {

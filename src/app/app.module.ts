@@ -4,11 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire/compat';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSidenavModule} from '@angular/material/sidenav';
-import { MatIconModule} from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
-import { MatButtonModule} from '@angular/material/button';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,6 +27,7 @@ import { BlogDetailComponent } from './blog/blog-detail/blog-detail.component';
 import { BlogNewComponent } from './blog/blog-new/blog-new.component';
 import { AdminModule } from './admin/admin.module';
 import { SharedModule } from './shared/shared.module';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -55,14 +51,9 @@ import { SharedModule } from './shared/shared.module';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatSidenavModule,
-    MatButtonModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatListModule,
-    MatIconModule,
     AdminModule,
     SharedModule,
+    MaterialModule,
     AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.firebase),
     FormsModule,

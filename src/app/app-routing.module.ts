@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminpanelComponent } from './admin/adminpanel/adminpanel.component';
 import { BloglistPageComponent } from './admin/components/blog/bloglist-page/bloglist-page.component';
 import { CreateblogPageComponent } from './admin/components/blog/createblog-page/createblog-page.component';
+import { MessagePageComponent } from './admin/components/message-page/message-page.component';
 import { CreateprojectPageComponent } from './admin/components/project/createproject-page/createproject-page.component';
 import { EditprojectPageComponent } from './admin/components/project/editproject-page/editproject-page.component';
 import { ProjectlistPageComponent } from './admin/components/project/projectlist-page/projectlist-page.component';
@@ -26,32 +28,46 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'register', component: RegisterComponent },
   {
-    path: 'message-page',
-    loadChildren: () => import('./admin/admin.module').then(m =>m.AdminModule),
+    path: 'messages',
+    component: MessagePageComponent,
     canActivate: [AuthGuard],
   },
   {
-    path: 'createblog-page', component: CreateblogPageComponent,
+    path: 'createblog-page',
+    component: CreateblogPageComponent,
     canActivate: [AuthGuard],
   },
-  { path: 'bloglist', component: BloglistPageComponent,
+  {
+    path: 'bloglist',
+    component: BloglistPageComponent,
     canActivate: [AuthGuard],
   },
-  { path: 'createproject-page', component: CreateprojectPageComponent,
-  canActivate: [AuthGuard],
-},
-{ path: 'projectlist', component: ProjectlistPageComponent,
-canActivate: [AuthGuard],
-},
-{ path: 'editproject', component: EditprojectPageComponent,
-canActivate: [AuthGuard],
-},
+  {
+    path: 'createproject-page',
+    component: CreateprojectPageComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'projectlist',
+    component: ProjectlistPageComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'editproject',
+    component: EditprojectPageComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'admin-panel',
+    component: AdminpanelComponent,
+    canActivate: [AuthGuard],
+  },
   { path: 'videos', component: VideosComponent },
   { path: 'verify-email', component: VerifyEmailComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
-  { path: 'blog-list', component: BlogListComponent},
-  { path: 'blog/:id', component: BlogDetailComponent},
-  { path: 'new-post', component: BlogNewComponent},
+  { path: 'blog-list', component: BlogListComponent },
+  { path: 'blog/:id', component: BlogDetailComponent },
+  { path: 'new-post', component: BlogNewComponent },
   { path: 'projects', component: ProjectsComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'not-found', component: NotFoundComponent },

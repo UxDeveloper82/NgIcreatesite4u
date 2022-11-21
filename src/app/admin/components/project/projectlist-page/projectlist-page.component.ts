@@ -1,8 +1,8 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Iproject } from 'src/app/_models/Iproject';
 import { ProjectsService } from 'src/app/_services/projects.service';
-import { EventEmitter } from 'stream';
+
 
 @Component({
   selector: 'app-projectlist-page',
@@ -10,8 +10,7 @@ import { EventEmitter } from 'stream';
   styleUrls: ['./projectlist-page.component.scss']
 })
 export class ProjectlistPageComponent implements OnInit {
-
-  toggleNav = false;
+  @Output() sidenavToggle = new EventEmitter<void>();
 
   public projects$: Observable<Iproject[]>;
 
@@ -21,13 +20,7 @@ export class ProjectlistPageComponent implements OnInit {
      this.projects$ = this.projectService.getAllProjectList();
   }
 
-  toggleNavbar() {
-     this.toggleNav= !this.toggleNav
+  onToggleSidenav() {
+    this.sidenavToggle.emit();
   }
-
-  onShowNavbar(event: boolean) {
-    console.log("Parent You click");
-    this.toggleNav= !this.toggleNav
-  }
-
 }

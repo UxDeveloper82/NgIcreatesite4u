@@ -11,6 +11,10 @@ import { EditblogPageComponent } from './components/blog/editblog-page/editblog-
 import { CreateprojectPageComponent } from './components/project/createproject-page/createproject-page.component';
 import { ProjectlistPageComponent } from './components/project/projectlist-page/projectlist-page.component';
 import { EditprojectPageComponent } from './components/project/editproject-page/editproject-page.component';
+import { AdminpanelComponent } from './adminpanel/adminpanel.component';
+import { MaterialModule } from '../material.module';
+import { WelcomeComponent } from './components/welcome/welcome.component';
+
 
 
 @NgModule({
@@ -22,13 +26,17 @@ import { EditprojectPageComponent } from './components/project/editproject-page/
     EditblogPageComponent,
     CreateprojectPageComponent,
     ProjectlistPageComponent,
-    EditprojectPageComponent
+    EditprojectPageComponent,
+    AdminpanelComponent,
+    WelcomeComponent
+
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MaterialModule
   ]
 })
 export class AdminModule { }

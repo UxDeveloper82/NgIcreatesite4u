@@ -6,19 +6,16 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./sidebar-page.component.scss']
 })
 export class SidebarPageComponent implements OnInit {
-
-  @Output() showToggle = new EventEmitter();
-  pages: string[] | undefined;
-
+  @Output() closeSidenav = new EventEmitter<void>();
   constructor() { }
 
   ngOnInit(): void {
   }
 
-
-  onShowNavbar() {
-    console.log('click');
-    this.showToggle.emit(false);
+  onClose() {
+    this.closeSidenav.emit();
   }
+
+
 
 }

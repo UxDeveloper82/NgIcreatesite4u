@@ -16,4 +16,9 @@ export class BloglistPageComponent implements OnInit {
     this.posts$ = this.postService.getAllPosts();
   }
 
+  deletePost(post: Ipost) {
+    if(window.confirm('Are you sure you want to delete the message ?')) {
+      console.log("You click");
+  }
+}
 }
