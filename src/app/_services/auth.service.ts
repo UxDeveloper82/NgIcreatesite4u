@@ -35,7 +35,7 @@ export class AuthService {
   register(email: string, password: string) {
     this.fireauth.createUserWithEmailAndPassword(email, password).then( res=> {
         alert('Registration Successful');
-        this.sendEmailForVarification(res.user);
+        this.sendEmailForVerification(res.user);
         this.router.navigate(['/login']);
       }, err => {
         alert(err.message);
@@ -64,14 +64,14 @@ export class AuthService {
     );
   }
   //Email verification
-  sendEmailForVarification(user: any) {
-    console.log(user);
-    user.sendEmailForVarification().then((res: any) => {
-        this.router.navigate(['/verify-email']);
-      }, (err: any) => {
-        alert('Something went wrong. Not able to send email your email.');
-      }
-    );
+  sendEmailForVerification(user: any) {
+     return this.fireauth.currentUser
+     .then((user) => {
+      return user?.sendEmailVerification();
+     })
+     .then(() => {
+      this.router.navigate(['/verify-email']);
+     })
   }
 
   // Sign in with google
